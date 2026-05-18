@@ -285,8 +285,11 @@
   text-transform: uppercase;
 }
 
-.dialog__button {
+.dialog__form {
   grid-column: 1 / -1;
+}
+
+.dialog__button {
   inline-size: 100%;
 }
 

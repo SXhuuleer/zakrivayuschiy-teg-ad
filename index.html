@@ -426,7 +426,11 @@
         </article>
       </section>
 
-      <button class="save-button button" type="button">
+      <button
+        class="save-button button"
+        type="button"
+        onclick="document.getElementById('save-dialog').showModal()"
+      >
         <svg class="button__icon" width="21" height="21" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
@@ -434,7 +438,7 @@
       </button>
     </main>
 
-    <dialog class="dialog">
+    <dialog class="dialog" id="save-dialog">
       <div class="dialog__content">
         <svg class="dialog__icon" width="39" height="39" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy"></use>
@@ -442,9 +446,11 @@
 
         <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
 
-        <button class="dialog__button button" type="button">
-          <span class="button__text">ОК</span>
-        </button>
+        <form class="dialog__form" method="dialog">
+          <button class="dialog__button button" type="submit">
+            <span class="button__text">ОК</span>
+          </button>
+        </form>
       </div>
     </dialog>
 
@@ -477,28 +483,5 @@
     </svg>
 
     <script src="./scripts/like.js"></script>
-    <script>
-      const saveButton = document.querySelector('.save-button');
-      const dialog = document.querySelector('.dialog');
-      const dialogButton = document.querySelector('.dialog__button');
-
-      saveButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (!dialog.open) {
-          dialog.showModal();
-        }
-      });
-
-      dialogButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (dialog.open) {
-          dialog.close();
-        }
-      });
-    </script>
   </body>
 </html>

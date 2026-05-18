@@ -1,1 +1,43 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: 'Inter';
+  --accent-font: 'PressStart2P';
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 785;
+
+  --page-background-color: #fff;
+  --main-color: #000;
+  --accent-color: #000;
+  --button-text-color: #fff;
+  --button-background-color: #fff;
+  --stroke-color: #fff;
+
+  --contour-color: #000;
+  --animation-fill-color: #ff0000;
+
+  --content-section-width: clamp(375px, 50vw, 696px);
+
+  --background-image:
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(
+      180deg,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-section-width: 100%;
+  }
+}

@@ -482,14 +482,22 @@
       const dialog = document.querySelector('.dialog');
       const dialogButton = document.querySelector('.dialog__button');
 
-      saveButton.addEventListener('click', (event) => {
+      saveButton.addEventListener('click', function (event) {
         event.preventDefault();
-        dialog.showModal();
+        event.stopPropagation();
+
+        if (!dialog.open) {
+          dialog.showModal();
+        }
       });
 
-      dialogButton.addEventListener('click', (event) => {
+      dialogButton.addEventListener('click', function (event) {
         event.preventDefault();
-        dialog.close();
+        event.stopPropagation();
+
+        if (dialog.open) {
+          dialog.close();
+        }
       });
     </script>
   </body>
